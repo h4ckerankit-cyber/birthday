@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* background: linear-gradient(135deg, #ff9a9e, #fad0c4); */
+    background: url('bg5.jpg') no-repeat center center/cover;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+  }
+
+  .container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin: 20px 0;
+    animation: fadeInDown 2s;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  }
+  
+  .slider {
+    position: center;
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  
+  .slide img {
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+
+  }
+  
+  .caption {
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 1.2rem;
+    background: rgba(0,0,0,0.4);
+    padding: 10px;
+    display: inline-block;
+    border-radius: 10px;
+  }
+  
+  #nextBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #ff6f91;
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .cake-section {
+    margin-top: 100px;
+  }
+  
+  .cake {
+    width: 350px;
+    animation: bounce 2s infinite;
+    transition: all 0.5s ease;
+  }
+
+  .special-msg {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 20px;
+    border-radius: 20px;
+    color: #190af1;
+    display: inline-block;
+    animation: fadeIn 2s;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    transition: all 1s ease;
+  }
+  .funny-msg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px 30px;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+    z-index: 999;
+    animation: fadeIn 1s;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #blowBtn {
+    margin-top: 25px;
+    padding: 12px 25px;
+    border: none;
+    background: #ffafbd;
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .final-msg {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 20px;
+    color: #fff;
+    display: inline-block;
+    animation: fadeIn 2s;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  }
+  
+  #emojiRain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .emoji {
+    position: fixed;
+    top: -50px;
+    font-size: 30px;
+    animation: fall linear forwards;
+    pointer-events: none;
+    opacity: 0.9;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translateY(110vh) rotate(360deg);
+      opacity: 1;
+    }
+  }
+  

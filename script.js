@@ -1,0 +1,85 @@
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const slidesContainer = document.querySelector('.slides');
+const nextBtn = document.getElementById('nextBtn');
+const cakeSection = document.getElementById('cakeSection');
+const blowBtn = document.getElementById('blowBtn');
+const finalMsg = document.getElementById('finalMsg');
+const cakeImage = document.getElementById('cakeImage');
+const emojiRain = document.getElementById('emojiRain');
+const funnySong = document.getElementById('funnySong');
+const cuteSong = document.getElementById('cuteSong');
+
+nextBtn.addEventListener('click', () => {
+  currentIndex++;
+  if (currentIndex < slides.length) {
+    slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+  } else {
+    document.querySelector('.slider').classList.add('hidden');
+    cakeSection.classList.remove('hidden');
+  }
+});
+
+const specialMsg = document.getElementById('specialMsg');
+
+blowBtn.addEventListener('click', () => {
+  blowBtn.style.display = 'none';
+  specialMsg.classList.remove('hidden');
+  createEmojiRain();
+  funnySong.play();
+
+    // After cute song ends, show special message
+    // funnySong.addEventListener('ended', () => {
+    //     specialMsg.classList.remove('hidden');
+      });
+    // });
+
+  funnySong.addEventListener('ended', () => {
+    setTimeout(() => {
+      cuteSong.play();
+      showFinalMsg();
+    });
+  });
+
+
+function createEmojiRain() {
+  const emojis = [ "✨", "🌟","🥰","🎉", "🎈", "🥳", "💖", "✨", "🌟"];
+  
+  let emojiInterval = setInterval(() => {
+    const emoji = document.createElement('div');
+    emoji.classList.add('emoji');
+    
+    // Set random emoji
+    emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+
+    // Random horizontal position
+    emoji.style.left = Math.random() * 100 + "vw";
+
+    // Random size
+    const size = Math.random() * 20 + 20;
+    emoji.style.fontSize = `${size}px`;
+
+    // Random animation duration
+    const duration = Math.random() * 2 + 3;
+    emoji.style.animationDuration = `${duration}s`;
+
+    // Random rotation
+    emoji.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+    emojiRain.appendChild(emoji);
+
+    // Remove emoji after falling
+    setTimeout(() => {
+      emoji.remove();
+    }, duration * 1000);
+  }, 200);
+
+//   // Stop emoji rain after 10s
+//   setTimeout(() => {
+//     clearInterval(emojiInterval);
+//   }, 10000);
+}
+
+function showFinalMsg() {
+  finalMsg.classList.remove('hidden');
+}
