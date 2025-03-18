@@ -1,28 +1,30 @@
 body {
-    margin: 0;
-    padding: 0;
-    /* background: linear-gradient(135deg, #ff9a9e, #fad0c4); */
-    background: url('bg5.jpg') no-repeat center center/cover;
+    background-color: #FFD1DC;
+    background-image: url('bg5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
   }
-
+  
   .container {
     text-align: center;
     padding: 20px;
   }
   
   .heading {
-    font-size: 2.5rem;
-    color: #ffffff;
+    font-size: 3rem;
+    color: #fff;
     margin: 20px 0;
     animation: fadeInDown 2s;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
   }
   
   .slider {
-    position: center;
-    width: 80%;
+    position: relative;
+    width: 85%;
     margin: 20px auto;
     overflow: hidden;
   }
@@ -38,69 +40,111 @@ body {
     padding: 20px;
   }
   
-  .slide img {
-    width: 300px;
+  .glow-container {
+    display: inline-block;
     border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-
+    box-shadow: 0 0 25px 10px #ff85a2;
+    transition: transform 0.5s;
+  }
+  
+  .glow-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .slide img {
+    width: 320px;
+    border-radius: 20px;
   }
   
   .caption {
-    margin-top: 10px;
-    color: #ffffff;
-    font-size: 1.2rem;
-    background: rgba(0,0,0,0.4);
-    padding: 10px;
+    margin-top: 12px;
+    color: #fff;
+    font-size: 1.3rem;
+    background: rgba(0,0,0,0.5);
+    padding: 12px;
     display: inline-block;
     border-radius: 10px;
   }
   
   #nextBtn {
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
-    background: #ff6f91;
+    background: linear-gradient(135deg, #ff6f91, #ffafbd);
     color: #fff;
-    border-radius: 30px;
+    border-radius: 40px;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    font-size: 1rem;
   }
   
   .cake-section {
     margin-top: 100px;
+    position: relative;
+  }
+  
+  .candle-container {
+    position: relative;
+    display: inline-block;
   }
   
   .cake {
     width: 350px;
     animation: bounce 2s infinite;
-    transition: all 0.5s ease;
   }
-
-  .special-msg {
+  
+  .flame {
+    width: 20px;
+    height: 40px;
+    background: radial-gradient(ellipse at center, #ff9c00 0%, #ff2200 100%);
+    border-radius: 50% 50% 40% 40%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: flicker 0.2s infinite alternate;
+    opacity: 1;
+  }
+  
+  .flame.hide {
+    animation: blowout 1s forwards;
+  }
+  
+  @keyframes flicker {
+    0% { transform: translateX(-50%) scale(1) rotate(0deg); }
+    100% { transform: translateX(-50%) scale(1.2) rotate(5deg); }
+  }
+  
+  @keyframes blowout {
+    0% { opacity: 1; transform: translateX(-50%) scale(1); }
+    100% { opacity: 0; transform: translateX(-50%) scale(0.1); }
+  }
+  
+  .special-msg, .final-msg {
     margin-top: 30px;
-    background: rgba(255, 255, 255, 0.25);
-    padding: 20px;
-    border-radius: 20px;
-    color: #190af1;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 25px;
+    border-radius: 25px;
+    color: #ff0040;
     display: inline-block;
     animation: fadeIn 2s;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    transition: all 1s ease;
+    box-shadow: 0 0 30px rgba(0,0,0,0.4);
   }
+  
   .funny-msg {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px 30px;
-    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 25px 35px;
+    border-radius: 25px;
     color: #fff;
     font-size: 22px;
     text-align: center;
     z-index: 999;
     animation: fadeIn 1s;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
   }
   
   .hidden {
@@ -111,26 +155,11 @@ body {
     margin-top: 25px;
     padding: 12px 25px;
     border: none;
-    background: #ffafbd;
+    background: linear-gradient(135deg, #ff85a2, #ffc0cb);
     color: #fff;
     border-radius: 30px;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  .final-msg {
-    margin-top: 30px;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 20px;
-    border-radius: 20px;
-    color: #fff;
-    display: inline-block;
-    animation: fadeIn 2s;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   }
   
   #emojiRain {
