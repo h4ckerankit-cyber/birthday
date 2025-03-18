@@ -57,7 +57,7 @@ blowBtn.addEventListener("click", () => {
 // Emoji rain function
 function startEmojiRain() {
   const emojiContainer = document.getElementById("emojiRain");
-  const emojis = ["🎂", "🎈", "🥳", "💖", "🎉", "✨", "🎶"];
+  const emojis = ["✨", "🌟","🎉", "🎈", "🥳", "💖", "✨", "🌟", "🎶"];
   
   setInterval(() => {
     const emoji = document.createElement("div");
