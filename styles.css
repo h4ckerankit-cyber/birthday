@@ -16,13 +16,14 @@ body {
 
 .container {
   text-align: center;
-  padding: 10px;
+  padding: 5px;
   max-width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Vertically center */
+  overflow: hidden;
 }
 
 .heading {
@@ -84,8 +85,25 @@ body {
   border-radius: 8px;
 }
 
+/* birthday msg */
+.birthday-header{
+  top: 25px;
+  transform: translateY(-80);
+  position: absolute;
+  text-align: center;
+  font-size: 1.4rem;
+  /* background: rgba(255, 255, 255, 0.8); */
+  padding: 6px 12px;
+  border-radius: 15px;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
 #nextBtn {
-  margin-top: 15px;
+  margin-top: 20px;
   padding: 10px 20px;
   border: none;
   background: linear-gradient(135deg, #ff6f91, #ffafbd);
@@ -98,7 +116,7 @@ body {
 
 /* Cake Section Center */
 .cake-section {
-  margin-top: 30px;
+  margin-top: 10px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -107,7 +125,7 @@ body {
 
 .cake {
   width: 80%;
-  max-width: 300px;
+  max-width: 400px;
   animation: bounce 2s infinite;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -126,15 +144,16 @@ body {
   font-size: 1rem;
 }
 
+
 .funny-msg {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.9); /* white box */
+  /* background: rgba(255, 255, 255, 0.9); white box */
   padding: 20px;
   border-radius: 25px;
-  color: #000; /* black text */
+  color: #e6ee0e; /* black text */
   font-size: 1.1rem;
   text-align: center;
   z-index: 999;
