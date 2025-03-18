@@ -7,7 +7,6 @@ const specialMsg = document.getElementById("specialMsg");
 const funnyMsg = document.getElementById("funnyMsg");
 const funnySong = document.getElementById("funnySong");
 const cuteSong = document.getElementById("cuteSong");
-const flame = document.getElementById("flame");
 
 let currentSlide = 0;
 
@@ -26,10 +25,12 @@ nextBtn.addEventListener("click", () => {
   }
 });
 
-  // Show special message after blowing
-  setTimeout(() => {
-    specialMsg.classList.remove("hidden");
-  }, 1500);
+// Blow button logic (no candle)
+blowBtn.addEventListener("click", () => {
+  blowBtn.style.display = "none";
+  
+  // Show special message immediately
+  specialMsg.classList.remove("hidden");
   
   // Start emoji rain
   startEmojiRain();
@@ -40,16 +41,15 @@ nextBtn.addEventListener("click", () => {
   // Show funny message popup
   funnyMsg.classList.remove("hidden");
   
-  // Hide funny message after 4 sec, start cute song
+  // Hide funny message after 9 sec, start cute song
   setTimeout(() => {
     funnyMsg.classList.add("hidden");
     cuteSong.play();
-  }, 8000);
+  }, 9000);
 });
 
 // Emoji rain function
 function startEmojiRain() {
-  const emojiContainer = document.getElementById("emojiRain");
   const emojis = ["✨", "🌟","🎉", "🎈", "🥳", "💖", "✨", "🌟", "🎶"];
   
   setInterval(() => {
@@ -60,7 +60,7 @@ function startEmojiRain() {
     emoji.style.animationDuration = 2 + Math.random() * 3 + "s";
     document.body.appendChild(emoji);
     
-    // Remove after fall
+    // Remove after falling
     setTimeout(() => {
       emoji.remove();
     }, 5000);
