@@ -113,7 +113,7 @@ body {
   margin-bottom: 10px;
 }
 
-.special-msg, .funny-msg {
+.special-msg {
   margin-top: 20px;
   background: rgba(255, 255, 255, 0.3);
   padding: 20px;
@@ -124,6 +124,23 @@ body {
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
   max-width: 90%;
   font-size: 1rem;
+}
+
+.funny-msg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9); /* white box */
+  padding: 20px;
+  border-radius: 25px;
+  color: #000; /* black text */
+  font-size: 1.1rem;
+  text-align: center;
+  z-index: 999;
+  animation: fadeIn 1s;
+  box-shadow: 0 0 25px rgba(0,0,0,0.7);
+  max-width: 85%;
 }
 
 .hidden {
