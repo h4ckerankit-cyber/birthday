@@ -31,7 +31,7 @@ blowBtn.addEventListener("click", () => {
   blowBtn.style.display = "none";
   
   // Animate flame blowing out
-  flame.classList.add("hide");
+  // flame.classList.add("hide");
   
   // Show special message after blowing
   setTimeout(() => {
@@ -51,7 +51,7 @@ blowBtn.addEventListener("click", () => {
   setTimeout(() => {
     funnyMsg.classList.add("hidden");
     cuteSong.play();
-  }, 4000);
+  }, 8000);
 });
 
 // Emoji rain function
