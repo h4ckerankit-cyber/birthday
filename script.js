@@ -26,13 +26,6 @@ nextBtn.addEventListener("click", () => {
   }
 });
 
-// Blow the candle logic
-blowBtn.addEventListener("click", () => {
-  blowBtn.style.display = "none";
-  
-  // Animate flame blowing out
-  // flame.classList.add("hide");
-  
   // Show special message after blowing
   setTimeout(() => {
     specialMsg.classList.remove("hidden");
