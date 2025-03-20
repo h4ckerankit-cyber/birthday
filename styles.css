@@ -74,7 +74,6 @@ body {
   border-radius: 15px;
 }
 
-/* Caption pushed slightly down */
 .caption {
   margin-top: 15px;
   color: #fff;
@@ -95,7 +94,7 @@ body {
   /* background: rgba(255, 255, 255, 0.8); */
   padding: 6px 12px;
   border-radius: 15px;
-  color: #ffffff;
+  color: #e6ee0e;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
